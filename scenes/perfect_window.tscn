@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2dom7jsjrnxi"]
+
+[ext_resource type="Script" uid="uid://b2rcataln5dkd" path="res://scripts/perfect_window.gd" id="1_wiwym"]
+
+[node name="perfect_window" type="Area2D"]
+script = ExtResource("1_wiwym")

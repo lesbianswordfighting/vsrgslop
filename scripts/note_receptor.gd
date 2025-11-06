@@ -1,0 +1,26 @@
+extends AnimatedSprite2D
+
+@export var key_name: String = ""
+@onready var note_receptor: AnimatedSprite2D = $"."
+@onready var note = preload("res://scenes/note.tscn")
+@onready var notecollision: CollisionShape2D = $RigidBody2D/notecollision
+@onready var receptorcollision: CollisionShape2D = $StaticBody2D/receptorcollision
+
+
+# handles note receptor state (not/pressed)
+func _process(delta):
+	if Input.is_action_just_pressed(key_name):
+		CreateNote()
+		note_receptor.play("pressed")
+	if Input.is_action_just_released(key_name):
+		note_receptor.play("not_pressed")
+
+# temporary note creation testing
+func CreateNote():
+	var fk_inst = note.instantiate()
+	get_tree().get_root().call_deferred("add_child", fk_inst)
+	fk_inst.Setup(position.x, frame + 0)
+	
+
+
+		

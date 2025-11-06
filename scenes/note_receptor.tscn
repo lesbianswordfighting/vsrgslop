@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://delvq5aw3a1l5"]
+
+[ext_resource type="Texture2D" uid="uid://c5mudtwyx7htg" path="res://assets/sprites/receptor_left.png" id="1_vaxl5"]
+[ext_resource type="Script" uid="uid://d25r53yh2k0uf" path="res://scripts/note_receptor.gd" id="2_jykvp"]
+[ext_resource type="Texture2D" uid="uid://ck6bw00di7n0f" path="res://assets/sprites/receptor_left_pressed.png" id="2_trnnu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaxl5"]
+atlas = ExtResource("1_vaxl5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r51sk"]
+atlas = ExtResource("2_trnnu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jykvp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaxl5")
+}],
+"loop": true,
+"name": &"not_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r51sk")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[node name="note_receptor" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jykvp")
+animation = &"pressed"
+script = ExtResource("2_jykvp")

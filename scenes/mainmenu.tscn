@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dimyq2iu3m3jw"]
+
+[ext_resource type="Script" uid="uid://ds4n0rejdr6g2" path="res://scripts/quit.gd" id="1_5mbse"]
+[ext_resource type="Script" uid="uid://bqc6ubo0msldl" path="res://scripts/start.gd" id="1_natt5"]
+
+[node name="mainmenu" type="Node2D"]
+
+[node name="start" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 195.0
+offset_right = 800.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 100
+text = "Start"
+script = ExtResource("1_natt5")
+
+[node name="credits" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 360.0
+offset_right = 800.0
+offset_bottom = 505.0
+theme_override_font_sizes/font_size = 100
+text = "Credits"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 531.0
+offset_right = 800.0
+offset_bottom = 676.0
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+script = ExtResource("1_5mbse")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(608, 305)
+zoom = Vector2(0.8, 0.8)
