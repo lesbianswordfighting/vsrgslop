@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b2rcataln5dkd" path="res://scripts/perfect_window.gd" id="1_wiwym"]
 
-[node name="perfect_window" type="Area2D"]
+[node name="perfect_window_left" type="Area2D"]
 script = ExtResource("1_wiwym")
+key_name = "key_d"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

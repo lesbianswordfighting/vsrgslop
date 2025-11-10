@@ -1,6 +1,9 @@
 extends Sprite2D
 
+@export var key_name: String = ""
 @onready var cleartimer: Timer = $cleartimer
+@onready var notecollision: CollisionShape2D = $RigidBody2D/notecollision
+
 
 #note scroll speed
 @export var scroll_speed: float = 4
@@ -14,6 +17,8 @@ func _init():
 # note scroll physics
 func _process(delta):
 	global_position += Vector2(0, scroll_speed)
+	notecollision.global_position = global_position
+	
 
 func Setup(target_x: float, target_frame: int):
 	global_position = Vector2(target_x, init_y_pos)
@@ -21,6 +26,7 @@ func Setup(target_x: float, target_frame: int):
 	
 	
 	set_process(true)
+
 
 
 func _on_cleartimer_timeout():

@@ -3,8 +3,6 @@ extends AnimatedSprite2D
 @export var key_name: String = ""
 @onready var note_receptor: AnimatedSprite2D = $"."
 @onready var note = preload("res://scenes/note.tscn")
-@onready var notecollision: CollisionShape2D = $RigidBody2D/notecollision
-@onready var receptorcollision: CollisionShape2D = $StaticBody2D/receptorcollision
 
 
 # handles note receptor state (not/pressed)
@@ -21,6 +19,3 @@ func CreateNote():
 	get_tree().get_root().call_deferred("add_child", fk_inst)
 	fk_inst.Setup(position.x, frame + 0)
 	
-
-
-		

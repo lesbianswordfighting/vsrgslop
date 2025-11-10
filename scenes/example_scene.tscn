@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3ffauqq11wvk"]
+[gd_scene load_steps=8 format=3 uid="uid://d3ffauqq11wvk"]
 
 [ext_resource type="PackedScene" uid="uid://delvq5aw3a1l5" path="res://scenes/note_receptor.tscn" id="1_p35lr"]
 [ext_resource type="Script" uid="uid://b0rfqbwp12ofu" path="res://scripts/example_scene.gd" id="1_xvif5"]
-[ext_resource type="PackedScene" uid="uid://c2dom7jsjrnxi" path="res://scenes/perfect_window.tscn" id="3_th6vq"]
+[ext_resource type="PackedScene" uid="uid://c2dom7jsjrnxi" path="res://scenes/perfect_window_left.tscn" id="3_th6vq"]
+[ext_resource type="PackedScene" uid="uid://bnb2akbo4j6lp" path="res://scenes/perfect_window_down.tscn" id="4_woa0s"]
+[ext_resource type="PackedScene" uid="uid://bxjhy02us1d61" path="res://scenes/perfect_window_up.tscn" id="5_0vo67"]
+[ext_resource type="PackedScene" uid="uid://c34gqf4wn22m7" path="res://scenes/perfect_window_right.tscn" id="6_2dpgr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksbg5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_th6vq"]
 
 [node name="example scene" type="Node2D"]
 script = ExtResource("1_xvif5")
@@ -32,20 +35,26 @@ position = Vector2(57, 40)
 rotation = 3.14159
 key_name = "key_k"
 
-[node name="perfect_window" parent="." instance=ExtResource("3_th6vq")]
+[node name="perfect_window_left" parent="." instance=ExtResource("3_th6vq")]
 
-[node name="left_window" type="CollisionShape2D" parent="perfect_window"]
-position = Vector2(-56, 40)
-shape = SubResource("RectangleShape2D_ksbg5")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="perfect_window_left"]
+position = Vector2(-57, 40)
+shape = SubResource("RectangleShape2D_th6vq")
 
-[node name="down_window" type="CollisionShape2D" parent="perfect_window"]
+[node name="perfect_window_down" parent="." instance=ExtResource("4_woa0s")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="perfect_window_down"]
 position = Vector2(-19, 40)
-shape = SubResource("RectangleShape2D_ksbg5")
+shape = SubResource("RectangleShape2D_th6vq")
 
-[node name="up_window" type="CollisionShape2D" parent="perfect_window"]
+[node name="perfect_window_up" parent="." instance=ExtResource("5_0vo67")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="perfect_window_up"]
 position = Vector2(19, 40)
-shape = SubResource("RectangleShape2D_ksbg5")
+shape = SubResource("RectangleShape2D_th6vq")
 
-[node name="right_window" type="CollisionShape2D" parent="perfect_window"]
+[node name="perfect_window_right" parent="." instance=ExtResource("6_2dpgr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="perfect_window_right"]
 position = Vector2(57, 40)
-shape = SubResource("RectangleShape2D_ksbg5")
+shape = SubResource("RectangleShape2D_th6vq")

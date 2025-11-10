@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxjhy02us1d61"]
+
+[ext_resource type="Script" uid="uid://b2rcataln5dkd" path="res://scripts/perfect_window.gd" id="1_srwfv"]
+
+[node name="perfect_window_up" type="Area2D"]
+script = ExtResource("1_srwfv")
+key_name = "key_j"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnb2akbo4j6lp"]
+
+[ext_resource type="Script" uid="uid://b2rcataln5dkd" path="res://scripts/perfect_window.gd" id="1_8mbms"]
+
+[node name="perfect_window_down" type="Area2D"]
+script = ExtResource("1_8mbms")
+key_name = "key_f"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
