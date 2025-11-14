@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxkmhie7k3r0j"]
+
+[ext_resource type="Script" uid="uid://bywppt2vgqkwk" path="res://scripts/great_window.gd" id="1_ypvij"]
+
+[node name="great_window_right" type="Area2D"]
+script = ExtResource("1_ypvij")

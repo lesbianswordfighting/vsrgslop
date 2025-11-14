@@ -13,5 +13,6 @@ script = ExtResource("5_8ibmt")
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
 [node name="notecollision" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -2.38419e-07)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_1bnk6")

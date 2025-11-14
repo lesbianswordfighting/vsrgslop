@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3ffauqq11wvk"]
+[gd_scene load_steps=14 format=3 uid="uid://d3ffauqq11wvk"]
 
 [ext_resource type="PackedScene" uid="uid://delvq5aw3a1l5" path="res://scenes/note_receptor.tscn" id="1_p35lr"]
 [ext_resource type="PackedScene" uid="uid://c2dom7jsjrnxi" path="res://scenes/perfect_window_left.tscn" id="3_th6vq"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bxjhy02us1d61" path="res://scenes/perfect_window_up.tscn" id="5_0vo67"]
 [ext_resource type="PackedScene" uid="uid://c34gqf4wn22m7" path="res://scenes/perfect_window_right.tscn" id="6_2dpgr"]
 [ext_resource type="PackedScene" uid="uid://cyvpn4j58b4rh" path="res://scenes/miss.tscn" id="6_woa0s"]
+[ext_resource type="PackedScene" uid="uid://cy5cvsowgkik6" path="res://scenes/great_window_left.tscn" id="7_n51pv"]
+[ext_resource type="PackedScene" uid="uid://dhgxmaetlsv5q" path="res://scenes/great_window_down.tscn" id="8_mcfkp"]
+[ext_resource type="PackedScene" uid="uid://v7ymrkkrnmph" path="res://scenes/great_window_up.tscn" id="9_cyyxy"]
+[ext_resource type="PackedScene" uid="uid://bxkmhie7k3r0j" path="res://scenes/great_window_right.tscn" id="10_wk7q2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_th6vq"]
 size = Vector2(20, 30)
@@ -13,11 +17,14 @@ size = Vector2(20, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vo67"]
 size = Vector2(505, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4645j"]
+size = Vector2(20, 30)
+
 [node name="example scene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -40)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.8, 2.8)
 
 [node name="note_receptor_up" parent="." instance=ExtResource("1_p35lr")]
 position = Vector2(19, 40)
@@ -40,26 +47,26 @@ key_name = "key_k"
 
 [node name="perfect_window_left" parent="." instance=ExtResource("3_th6vq")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="perfect_window_left"]
-position = Vector2(-57, 40)
+[node name="perfect" type="CollisionShape2D" parent="perfect_window_left"]
+position = Vector2(-57, 51)
 shape = SubResource("RectangleShape2D_th6vq")
 
 [node name="perfect_window_down" parent="." instance=ExtResource("4_woa0s")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="perfect_window_down"]
-position = Vector2(-19, 40)
+[node name="perfect" type="CollisionShape2D" parent="perfect_window_down"]
+position = Vector2(-19, 51)
 shape = SubResource("RectangleShape2D_th6vq")
 
 [node name="perfect_window_up" parent="." instance=ExtResource("5_0vo67")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="perfect_window_up"]
-position = Vector2(19, 40)
+[node name="perfect" type="CollisionShape2D" parent="perfect_window_up"]
+position = Vector2(19, 51)
 shape = SubResource("RectangleShape2D_th6vq")
 
 [node name="perfect_window_right" parent="." instance=ExtResource("6_2dpgr")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="perfect_window_right"]
-position = Vector2(57, 40)
+[node name="perfect" type="CollisionShape2D" parent="perfect_window_right"]
+position = Vector2(57, 51)
 shape = SubResource("RectangleShape2D_th6vq")
 
 [node name="miss" parent="." instance=ExtResource("6_woa0s")]
@@ -67,3 +74,48 @@ shape = SubResource("RectangleShape2D_th6vq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="miss"]
 position = Vector2(0.5, 176)
 shape = SubResource("RectangleShape2D_0vo67")
+
+[node name="great_window_left" parent="." instance=ExtResource("7_n51pv")]
+key_name = "key_d"
+
+[node name="early" type="CollisionShape2D" parent="great_window_left"]
+position = Vector2(-57, 21)
+shape = SubResource("RectangleShape2D_4645j")
+
+[node name="late" type="CollisionShape2D" parent="great_window_left"]
+position = Vector2(-57, 81)
+shape = SubResource("RectangleShape2D_4645j")
+
+[node name="great_window_down" parent="." instance=ExtResource("8_mcfkp")]
+key_name = "key_f"
+
+[node name="early" type="CollisionShape2D" parent="great_window_down"]
+position = Vector2(-19, 21)
+shape = SubResource("RectangleShape2D_4645j")
+
+[node name="late" type="CollisionShape2D" parent="great_window_down"]
+position = Vector2(-19, 81)
+shape = SubResource("RectangleShape2D_4645j")
+
+[node name="great_window_up" parent="." instance=ExtResource("9_cyyxy")]
+key_name = "key_j"
+
+[node name="early" type="CollisionShape2D" parent="great_window_up"]
+position = Vector2(19, 21)
+shape = SubResource("RectangleShape2D_4645j")
+
+[node name="late" type="CollisionShape2D" parent="great_window_up"]
+position = Vector2(19, 81)
+shape = SubResource("RectangleShape2D_4645j")
+
+[node name="great_window_right" parent="." instance=ExtResource("10_wk7q2")]
+position = Vector2(-1, 0)
+key_name = "key_k"
+
+[node name="early" type="CollisionShape2D" parent="great_window_right"]
+position = Vector2(57, 21)
+shape = SubResource("RectangleShape2D_4645j")
+
+[node name="late" type="CollisionShape2D" parent="great_window_right"]
+position = Vector2(58, 81)
+shape = SubResource("RectangleShape2D_4645j")
