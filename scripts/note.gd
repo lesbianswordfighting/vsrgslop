@@ -7,10 +7,12 @@ extends Sprite2D
 
 
 #note scroll speed
-@export var scroll_speed: float = 4
+@export var scroll_speed: float = 4.2
+
 
 # spawn position
 var init_y_pos: float = -360
+
 
 func _init():
 	set_process(false)

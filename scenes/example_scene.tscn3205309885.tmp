@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3ffauqq11wvk"]
+[gd_scene load_steps=15 format=3 uid="uid://d3ffauqq11wvk"]
 
 [ext_resource type="Script" uid="uid://i65hmvvhjbm" path="res://scripts/currentscore.gd" id="1_mcfkp"]
 [ext_resource type="PackedScene" uid="uid://delvq5aw3a1l5" path="res://scenes/note_receptor.tscn" id="1_p35lr"]
-[ext_resource type="Script" uid="uid://bh10ait010um8" path="res://scripts/combo.gd" id="2_cyyxy"]
 [ext_resource type="PackedScene" uid="uid://c2dom7jsjrnxi" path="res://scenes/perfect_window_left.tscn" id="3_th6vq"]
 [ext_resource type="PackedScene" uid="uid://bnb2akbo4j6lp" path="res://scenes/perfect_window_down.tscn" id="4_woa0s"]
 [ext_resource type="PackedScene" uid="uid://bxjhy02us1d61" path="res://scenes/perfect_window_up.tscn" id="5_0vo67"]
@@ -24,31 +23,6 @@ size = Vector2(20, 26)
 
 [node name="example scene" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="currentscore" type="RichTextLabel" parent="StaticBody2D"]
-offset_left = -220.0
-offset_top = -163.0
-offset_right = 4.0
-offset_bottom = -123.0
-text = "Score:"
-script = ExtResource("1_mcfkp")
-
-[node name="combotext" type="RichTextLabel" parent="StaticBody2D"]
-offset_left = 96.0
-offset_top = -87.0
-offset_right = 322.0
-offset_bottom = -47.0
-text = "Combo"
-
-[node name="combo" type="RichTextLabel" parent="StaticBody2D"]
-offset_left = 97.0
-offset_top = -63.0
-offset_right = 152.0
-offset_bottom = -23.0
-horizontal_alignment = 1
-script = ExtResource("2_cyyxy")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -40)
 zoom = Vector2(2.5, 2.5)
@@ -58,16 +32,25 @@ z_index = -7
 layout_mode = 3
 anchors_preset = 0
 offset_top = 40.0
-offset_right = 420.0
+offset_right = 40.0
 offset_bottom = 80.0
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D/Control"]
-layout_mode = 0
 offset_left = 47.0
 offset_top = -441.0
 offset_right = 201.0
 offset_bottom = 561.0
 color = Color(0, 0, 0, 0.27451)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="currentscore" type="RichTextLabel" parent="Camera2D/CanvasLayer"]
+offset_left = -217.0
+offset_top = -160.0
+offset_right = 7.0
+offset_bottom = -120.0
+text = "Score:"
+script = ExtResource("1_mcfkp")
 
 [node name="note_receptor_up" parent="." instance=ExtResource("1_p35lr")]
 z_index = 2
