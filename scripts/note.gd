@@ -5,7 +5,6 @@ extends Sprite2D
 @export var key_name: String = ""
 @onready var notecollision: CollisionShape2D = $RigidBody2D/notecollision
 
-
 #note scroll speed
 @export var scroll_speed: float = 4.2
 
@@ -25,6 +24,4 @@ func _process(delta):
 
 func Setup(target_x: float):
 	global_position = Vector2(target_x, init_y_pos)
-	
-	
 	set_process(true)
