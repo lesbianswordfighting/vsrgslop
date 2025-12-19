@@ -237,6 +237,15 @@ offset_right = 323.0
 offset_bottom = 131.0
 color = Color(0, 0, 0, 1)
 
+[node name="mv darkener" type="ColorRect" parent="Camera2D/Control"]
+z_index = -8
+layout_mode = 0
+offset_left = -346.0
+offset_top = -252.0
+offset_right = 349.0
+offset_bottom = 142.0
+color = Color(0, 0, 0, 0.243137)
+
 [node name="chart" parent="." instance=ExtResource("17_7oqaw")]
 
 [connection signal="finished" from="mvplayer" to="StaticBody2D/judgement" method="_on_mvplayer_finished"]
